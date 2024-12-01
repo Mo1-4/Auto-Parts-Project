@@ -1,0 +1,727 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    color: #fff;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+input::placeholder{
+    color: white;
+    text-align: center;
+}
+
+.back-top{
+    width: 70px;
+    height: 70px;
+    background-color: #fa581e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    right: 2%;
+    bottom: 5%;
+    z-index: 1;
+    animation: top-down 2s ease-in-out infinite;
+}
+
+@keyframes top-down{
+    0%{
+        transform: translatey(10px);
+    }
+
+    50%{
+        transform: translatey(-10px);
+    }
+
+    100%{
+        transform: translatey(10px);
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    background: linear-gradient(178.1deg, rgba(60, 55, 106, 0.9) 8.5%, rgba(23, 20, 69, 0.9) 82.4%);
+    height: 90px;
+    padding: 5px;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    border-radius: 0 0 20% 20%;
+}
+
+nav .logo h1 a span{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+nav .logo h1 a{
+    color: white;
+    transition: 0.3s;
+}
+
+nav .logo h1{
+    transition: 0.2s linear;
+}
+
+nav .logo h1:hover{
+    transform: skew(-5deg);
+}
+
+nav .logo h1 a:hover{
+    color: rgb(210, 39, 39);
+}
+
+nav .nav-items ul{
+    display: flex;
+    list-style-type: none;
+    column-gap: 40px;
+}
+
+nav .nav-items ul li{
+    transition: 0.2s linear;
+}
+
+nav .nav-items ul li a {
+    color: #fff;
+    font-size: 1.1rem;
+    transition: 0.2s linear;
+}
+
+nav .nav-items ul li a:hover{
+    color: rgb(255, 215, 0);
+}
+
+nav .nav-items ul li:hover{
+    transform: scale(1.2,1.2);
+}
+
+nav .search-bar{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+nav .search-bar input{
+    width: 250px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: #333;
+    outline: none;
+    border: none;
+    color: #000;
+    transition: .3s linear;
+}
+
+nav .search-bar input:focus{
+    background-color: rgb(212, 75, 121);
+    transform: scale(0.95,0.95);
+}
+
+.hidden{
+    height: 0;
+    overflow: hidden;
+    transition: .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.active{
+    height: 120px;
+    transition: .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.toggle{
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+}
+
+.accordion-items ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+    list-style-type: none;
+    gap: 10px;
+    height: 120px;
+}
+
+.main-overlay {
+    background: url(../images/christian-wiediger-KzZ2FHwNNFQ-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.main-overlay .main-landing,
+.premium-overlay .premium-landing{
+    background-color: rgba(0, 0, 0, 0.6);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+}
+
+.main-landing *{
+    margin-bottom: 10px;
+    animation: opacite 2s linear;
+}
+
+.main-landing .heading h1,
+.main-landing .heading h2{
+    padding-bottom: 10px;
+}
+
+.main-landing .heading h2:nth-of-type(1){
+    color: #fa581e;
+}
+
+.main-landing .heading h1:nth-child(2){
+    font-size: 50px;
+}
+
+.main-landing .shop-button a button,
+.info-landing .content-info .learn-button a button,
+.premium-overlay .premium-landing .premium-button a button{
+    width: 150px;
+    height: 55px;
+    border-radius: 25px;
+    border: none;
+    background-color: #ff4500;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.main-landing .shop-button a button:hover,
+.info-landing .content-info .learn-button a button:hover,
+.premium-overlay .premium-landing .premium-button a button:hover{
+    background-color: #000;
+    color: #fff;
+    border: 1px solid snow;
+}
+
+.main-landing .advantages{
+    display: flex;
+    gap: 40px;
+}
+
+.main-landing .advantages div:nth-child(1),
+.main-landing .advantages div:nth-child(2){
+    border-right: 2px solid #ff4500;
+    border-radius: 2px;
+    padding-right: 30px;
+}
+
+.main-landing .advantages div span {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.autoparts-cards{
+    background-color: #000;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.head-part, .shop-head{
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+.shop-head{
+    justify-content: center;
+}
+
+.head-part .shop-button a button{
+    width: 135px;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px solid #fffafa;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.head-part .shop-button a button:hover{
+    border: none;
+    background-color: #ff4500;
+    color: #000;
+}
+
+.autoparts-cards .gear-card {
+    position: relative;
+    transition: .3s linear;
+}
+
+.autoparts-cards .gear-card:hover{
+    transform: scale(1.1,1.1);
+}
+
+.autoparts-cards .gear-card .overlay{
+    width: 400px;
+    height: 500px;
+    background-color: #000000;
+    position: absolute;
+    top: 0;
+    opacity: 0.5;
+    transition: .3s linear;
+}
+
+.autoparts-cards .gear-card .overlay:hover{
+    opacity: 0;
+}
+
+
+.info-landing{
+    background: linear-gradient(115deg, rgb(0, 0, 0) 5.8%, rgb(178, 14, 14) 112.6%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 20px;
+}
+
+.info-landing .content-info{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 50%;
+}
+
+.info-landing .content-info .pros-info table td{
+    padding: 40px;
+    border: 2px solid rgb(255, 250, 250);
+}
+
+.info-landing .content-info .pros-info table tr:nth-of-type(1) td:nth-of-type(1),
+.info-landing .content-info .pros-info table tr:nth-of-type(1) td:nth-of-type(2){
+    border-bottom: transparent;
+    position: relative;
+    top: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.info-landing .content-info .pros-info table tr:nth-of-type(1) td:nth-of-type(1),
+.info-landing .content-info .pros-info table tr:nth-of-type(2) td:nth-of-type(1){
+    border-right: transparent;
+    position: relative;
+    left: 10px;
+}
+
+.info-landing .content-info .pros-info table tr:nth-of-type(2) td:nth-of-type(1),
+.info-landing .content-info .pros-info table tr:nth-of-type(2) td:nth-of-type(2){
+    border-radius: 0 0 5px 5px;
+}
+
+
+.info-landing .content-info .pros-info table td span{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.info-landing .black-car img{
+    transition: .3s;
+}
+
+.info-landing .black-car img:hover{
+    transform: scale(1.1,1.1);
+}
+
+.shop-cards{
+    background-color: #000;
+    height: fit-content;
+    gap: 25px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));;
+    place-items: center;
+}
+
+
+.shop-cards .card{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.shop-cards .card .image-holder{
+    position: relative;
+}
+
+.shop-cards .card .image-holder p{
+    position: absolute;
+    top: 0;
+    width: 90px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    background-color: rgb(255, 69, 0);
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+
+.shop-cards .card .price p{
+    color: rgb(177, 176, 176);
+}
+
+.shop-cards .card .rate-stars{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.shop-cards .card .rate-stars p{
+    font-size: 1.2rem;
+}
+
+.shop-cards .card .add-button a button {
+    width: 350px;
+    height: 45px;
+    border: 2px solid rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.shop-cards .card .add-button a button:hover{
+    background-color: rgb(255, 250, 250);
+    color: rgb(0, 0, 0);
+}
+
+.premium-overlay {
+    background: url(../images/Black\ Sports\ Car.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.premium-overlay .premium-landing .premium-heading h1{
+    font-size: 60px;
+}
+
+.premium-overlay .premium-landing{
+    background-color: rgba(51, 51, 51, 0.361);
+}
+
+.premium-overlay .premium-landing .paragraph p {
+    border-top: 5px solid rgb(227, 234, 236);
+    border-radius: 2px;
+    padding: 25px;
+}
+
+footer{
+    background-color: #000;
+    height: fit-content;
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+
+footer hr {
+    border-color: gold;
+}
+
+footer .footer-section{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+footer .footer-section p{
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+    color: rgb(87, 191, 193);
+    
+}
+
+footer .footer-section a{
+    transition: .2s linear;
+}
+
+footer .footer-section a:hover{
+    transform: scale(1.1,1.1);
+    color: darkorange;
+}
+
+footer .footer-section .logo h1 a span {
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 5px;
+        margin-left: 20px;
+}
+
+footer .footer-section .logo h1 a{
+    transition: .3s;
+}
+
+footer .footer-section .logo h1 a:hover{
+    color: rgb(255, 215, 0);
+}
+
+.end {
+    height: fit-content;
+    padding: 20px;
+    background-color: #000;
+}
+
+.end hr {
+    border-color: rgb(32, 178, 170);
+    margin-bottom: 30px;
+}
+
+.end hr:nth-of-type(2),
+.end hr:nth-of-type(3){
+    margin-top: 30px;
+}
+
+.end .privacy {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.end .privacy p a{
+    transition: .2s linear;
+}
+
+.end .privacy p a:hover{
+    color: rgb(186, 77, 237);
+}
+
+.end .payment {
+    display: flex;
+    justify-content: center;
+}
+
+.end .payment img{
+    transition: .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.end .payment img:hover{
+    transform: scale(1.2,1.2);
+}
+
+.end .copyright {
+    display: flex;
+    justify-content: center;
+}
+
+.end .copyright p a {
+    color: rgb(249, 226, 96);
+    transition: .2s;
+}
+
+.end .copyright p a:hover{
+    color: rgb(192, 25, 192);
+}
+
+@media(max-width: 1109px){
+    .info-landing{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 0;
+    }
+
+    .info-landing .content-info {
+        width: auto;
+        align-items: center;
+    }
+    
+    .info-landing .content-info .pros-info table td{
+        padding-inline: 20px;
+    }
+}
+
+@media(max-width: 940px){
+    footer .footer-section{
+        align-items: center;
+        flex-grow: 2;
+    }
+
+}
+
+@media(min-width: 850px){
+    nav .toggle{
+        display: none;
+    }
+}
+
+@media(max-width: 850px){
+    nav .search-bar,
+    nav .nav-items{
+        display: none;
+    }
+
+    nav{
+        position: static;
+        z-index: -1;
+        border-radius: 0;
+        background: linear-gradient(178.1deg, rgba(60, 55, 106) 8.5%, rgba(23, 20, 69) 82.4%);
+        width: auto;
+    }
+
+    nav .toggle {
+        display: block;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media(max-width: 695px){
+    .shop-cards .card{
+        align-items: center;
+    }
+}
+
+@media(max-width: 600px){
+    .info-landing .black-car img {
+        width: 350px;
+        height: 350px;
+    }
+    .main-landing .heading h1:nth-child(2){
+        font-size: 40px;
+    }
+}
+
+
+@media(max-width: 430px){
+    .main-overlay .main-landing .advantages{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .main-landing .advantages div:nth-child(1),
+    .main-landing .advantages div:nth-child(2){
+        border-right: none;
+        border-bottom: 2px solid #ff4500;
+        padding: 0;
+    }
+    
+    .info-landing .black-car img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .autoparts-cards .gear-card .image-holder img,
+    .autoparts-cards .gear-card .overlay {
+        width: 320px;
+    }
+}
+
+@media(max-width: 360px){
+    .head-part{
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .autoparts-cards .gear-card .image-holder img,
+    .autoparts-cards .gear-card .overlay {
+        width: 280px;
+        height: 350px;
+    }
+
+    .shop-cards{
+        place-content: center;
+    }
+    
+    .shop-cards .card .image-holder img {
+        width: 280px;
+    }
+
+    .shop-cards .card .add-button a button{
+        width: 260px;
+    }
+
+    .info-landing .content-info .pros-info table{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info-landing .black-car img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media(max-width: 330px){
+    .info-landing .black-car img {
+        width: 230px;
+        height: 230px;
+    }
+    .info-landing .content-info .pros-info table td{
+        padding-inline: 15px;
+    }
+}
